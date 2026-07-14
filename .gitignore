@@ -1,0 +1,31 @@
+# Training artifacts
+checkpoints/
+checkpoint-*/
+outputs/
+adapters/
+task1_sft_adapter/
+
+# Hugging Face and experiment caches
+.cache/
+huggingface/
+hf_cache/
+wandb/
+
+# Large source bundles and model weights
+*.zip
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Python/Jupyter/Colab temporary files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.tmp
+*.log
+/content/
+
+# Operating-system metadata
+.DS_Store
+._*
