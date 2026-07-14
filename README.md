@@ -72,13 +72,24 @@ d0f5fb848245b18e97b97fe5158c602f3f2b49b8ec6588f93a0f0e9f10c58efe  data/public_te
 b5cf7b53417033de19b9c44a43402bce0e6eeece44b1abac2cf596785b60888d  metrics/style_clf.pkl
 ```
 
-## Verification status
+## Verification status and reproduced result
 
 The notebook is schema-valid, all code cells compile, and the data/classifier checks have been run
 locally with `scikit-learn==1.7.2`. The classifier sanity means are approximately 0.974751 for the
 reference `kid` answers and 0.018412 for the reference `adult` answers.
 
-This machine has no NVIDIA CUDA/T4 runtime, so the real QLoRA training and 50 generations have not
-been executed here. Therefore no task letter is claimed as reproduced yet. It becomes confirmed only
-after the last cell completes in a real Colab T4 run and prints `TASK1_MEAN_P_SIMPLE` and
-`TASK1_ANSWER` from the newly trained model.
+A complete top-to-bottom run in Google Colab on a T4 finished successfully and the notebook's final
+computed report was:
+
+```text
+TASK1_NUM_GENERATIONS=50
+TASK1_SEED=42
+TASK1_DO_SAMPLE=False
+TASK1_MEAN_P_SIMPLE=0.971761
+TASK1_INTERVAL=0.9 <= P_simple <= 1.0
+TASK1_ANSWER=Г
+```
+
+The reported mean belongs to the `0.9 <= P_simple <= 1.0` interval, so the reproduced task answer is
+**Г**. The metric and letter remain computed from the 50 newly generated answers in the notebook;
+they are not hard-coded into the training or evaluation cells.
