@@ -22,8 +22,8 @@ runtime outputs are intentionally excluded from Git.
 ## What the notebook does
 
 1. Installs pinned versions of Transformers, TRL, PEFT, Accelerate, bitsandbytes, Datasets,
-   `scikit-learn==1.7.2`, SciPy, pandas, joblib, SentencePiece, and related packages. It does not
-   replace Colab's PyTorch or CUDA installation.
+   `scikit-learn==1.7.2`, SciPy, pandas, joblib, SentencePiece, and related packages. It preserves
+   Colab's already loaded NumPy, PyTorch, and CUDA stack to avoid an in-process binary ABI mismatch.
 2. Requires a CUDA GPU and prints the complete software/GPU environment.
 3. Fixes Python, NumPy, PyTorch, CUDA, Transformers, trainer, and data seeds to 42.
 4. Validates the 1,489 training rows and constructs only conversational `prompt`/`completion`
