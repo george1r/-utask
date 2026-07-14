@@ -1,5 +1,7 @@
 # Task 1: Qwen3 SFT for a simple explanation style
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/george1r/-utask/blob/main/notebooks/task1_sft_qwen3_colab.ipynb)
+
 This repository contains a reproducible solution for **task 1 only**: supervised fine-tuning of
 `Qwen/Qwen3-4B-Instruct-2507` on the simple (`kid`) responses from `kid_adult.jsonl`, followed by
 greedy generation on all 50 held-out prompts and measurement with the supplied `style_clf.pkl`.
@@ -55,26 +57,10 @@ TASK1_ANSWER=<computed А/Б/В/Г>
 Use a fresh **T4 GPU** runtime and run every cell from top to bottom without skipping cells. Do not
 tune hyperparameters from the public-test result.
 
-There is currently **no Git remote configured** for this local repository. Consequently, a truthful
-public “Open in Colab” URL and automatic clean-Colab clone URL cannot yet be included. The notebook
-works without path edits when it is run from an already cloned checkout, but deliberately raises a
-clear error if the repository files are absent and no public HTTPS URL is configured.
-
-After a public GitHub or GitLab repository exists:
-
-1. add its HTTPS remote and push the existing, unmodified commit history;
-2. record that same public clone URL in `CONFIG["repo_url"]` in the notebook configuration cell;
-3. commit and push that change normally (do not amend, rebase, force-push, or alter commit dates);
-4. add the provider's Colab badge URL to this README and verify a fresh top-to-bottom T4 run.
-
-The expected GitHub badge form is:
-
-```markdown
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OWNER/REPOSITORY/blob/main/notebooks/task1_sft_qwen3_colab.ipynb)
-```
-
-Do not insert a placeholder badge or private clone URL: either would make the clean-runtime claim
-false.
+Open the notebook with the badge above. In a clean runtime it clones the public repository from
+`https://github.com/george1r/-utask.git`, verifies that all required data and metric files exist,
+and then runs without path edits. The original commit history is preserved; do not amend, rebase,
+force-push, or alter commit dates.
 
 ## Data integrity
 
