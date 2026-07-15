@@ -80,13 +80,13 @@ The final cell prints values computed during that run:
 TASK2_NUM_GENERATIONS=50
 TASK2_SEED=42
 TASK2_DO_SAMPLE=False
-TASK2_MEAN_P_SIMPLE=<computed value>
-TASK2_INTERVAL=<computed bounds>
-TASK2_ANSWER=<computed А/Б/В/Г>
+TASK2_MEAN_P_SIMPLE=0.995563
+TASK2_INTERVAL=0.9 <= P_simple <= 1.0
+TASK2_ANSWER=Г
 ```
 
-The Task 2 metric is intentionally not claimed here until the full GPU run has completed and its
-machine-readable report has been copied back into the repository.
+The complete Task 2 Colab T4 run produced `P_simple = 0.995563`, which is in the `0.9–1.0`
+interval (answer `Г`). This is an increase of `0.023802` over the reproduced Task 1 result.
 
 ## Task 3 — Reward Model
 
@@ -138,5 +138,5 @@ All three notebooks are valid notebook JSON and all code cells compile. The loca
 sanity check gives mean `P_simple` values of approximately 0.974751 for reference `kid` answers and
 0.018412 for reference `adult` answers. Every quality train/public sequence was checked with the
 pinned tokenizer; all fit the notebook's 384-token quality limit (observed maximum: 363). The
-complete Task 1 run is recorded above. Tasks 2–5 still require their deliberately in-notebook
-Colab T4 training run; static validation cannot substitute for measured GPU results.
+complete Task 1 and Task 2 runs are recorded above. Tasks 3–5 still require their deliberately
+in-notebook Colab T4 training runs; static validation cannot substitute for measured GPU results.
