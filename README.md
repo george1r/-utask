@@ -109,13 +109,18 @@ TRL's pure SimPO loss is used with `cpo_alpha=0.0`; the notebook asserts that on
 policy adapter exists. Task 5 is evaluated by the exact same helper and public rows as Task 4, and
 the final cell prints their accuracy delta.
 
-## Run in Google Colab
+## Run in Google Colab or Kaggle
 
 Open the **All five tasks** notebook using the first badge, select a fresh **T4 GPU** runtime, and
 run all cells from top to bottom without skipping or editing them. In a clean runtime it clones
 `https://github.com/george1r/-utask.git` and needs no file upload or path change. The combined run is
 substantially longer than Task 1 because it performs five training stages and explicitly unloads
 one model before loading the next to stay within T4 memory.
+
+If Colab reports that the account has reached its GPU usage limit, do not continue on CPU. Import
+`notebooks/alignment_all_tasks_qwen3_colab.ipynb` into Kaggle, enable a **GPU T4** accelerator and
+**Internet**, and use **Run All**. The notebook detects `/kaggle/working`, clones the same `main`
+branch there, and otherwise follows the identical pinned training and evaluation path.
 
 Do not tune hyperparameters from the public-test result. Preserve the original commit history: do
 not amend, rebase, force-push, or alter commit dates.
